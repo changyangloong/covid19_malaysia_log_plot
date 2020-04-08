@@ -23,6 +23,14 @@ Screenshot from https://www.youtube.com/watch?v=54XLXg4fYsc indicating the trend
 </p>
 
 # Generate graphs and data
+## Requirements
+ - Python 3
+   - numpy 
+   - requests
+   - BeautifulSoup
+   - scipy 
+   - matplotlib
+
 Run generate_outbreak_json.py to create the json file as well as the graphs
 >python generate_outbreak_json.py 
 
