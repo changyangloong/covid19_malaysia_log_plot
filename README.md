@@ -1,6 +1,8 @@
 # Trajectory of Malaysia COVID-19 cases
 Inspired by aatishb and minutephysics, this project aims to monitor the Covid19 trends in Malaysia. These chart would tell us if our country's policy in combating Covid19 is effective or not. Additionally, such insight could help us in finding lights of hope during this difficult time.
 
+Different from traditional cases versus time/date graph, these graphs gives the weekly new cases versus overall cases in log scales. The  trend of the outbreak would be in straight line instead of exponential curves. By monitoring these charts, we would be able to tell if the situation of the outbreak had been combat effectively (details to state). Based on the trend, we could pin point which state are coping well with the pandemic and which are not to further analysis better and efficient way in resolving the pandemic.
+
 ## Covid 19 treads of Malaysia
 <p align="center">
   <img src="img/20200408172058_malaysia.png" width="600"><br />
