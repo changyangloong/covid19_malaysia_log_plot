@@ -171,13 +171,13 @@ def generate_json(stat_dict,new_cases_daily,date,generate_curve):
         plt.figure(figsize=(10,10)) 
         
         plt.plot(malaysia_stats_ori[0][1:],malaysia_stats_ori[1][1:],label='raw data')     
-        plt.plot(malaysia_stats[0][1:],malaysia_stats[1][1:],label='smoothen data') 
+#        plt.plot(malaysia_stats[0][1:],malaysia_stats[1][1:],label='smoothen data') 
         
         plt.plot(malaysia_stats_ori[0][1:],malaysia_stats_ori[1][1:],'ro')
         plt.yscale('log')
         plt.xscale('log')  
         plt.title('Malaysia Covid19 Trend')
-        plt.legend(loc="upper left")
+#        plt.legend(loc="upper left")
         plt.xlabel('Overall cases')
         plt.ylabel('New cases (weekly)')
         plt.tight_layout()    
@@ -191,13 +191,13 @@ def generate_json(stat_dict,new_cases_daily,date,generate_curve):
             plt.subplot(4,4,i+1)
             
             plt.plot(ori_stat[0][1:],ori_stat[1][1:],label='raw data')     
-            plt.plot(stat[0][1:],stat[1][1:],label='smoothen data') 
+#            plt.plot(stat[0][1:],stat[1][1:],label='smoothen data') 
         
             plt.plot(ori_stat[0][1:],ori_stat[1][1:],'ro')
             plt.yscale('log')
             plt.xscale('log')  
             plt.title(name)
-            plt.legend(loc="upper left")
+#            plt.legend(loc="upper left")
             plt.xlabel('Overall cases')
             plt.ylabel('New cases (weekly)')
         plt.tight_layout()    

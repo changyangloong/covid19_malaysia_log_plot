@@ -5,13 +5,13 @@ Different from traditional cases versus time/date graph, these graphs gives the 
 
 ## Covid 19 treads of Malaysia
 <p align="center">
-  <img src="img/20200408172058_malaysia.png" width="600"><br />
-  Global Covid19 Trend in Malaysia (updated 8 April 2020)
+  <img src="img/20200409103819_malaysia.png" width="600"><br />
+  Global Covid19 Trend in Malaysia (updated 9 April 2020, 11:02AM), red markers indicate the date from 13 March to 8 April 2020
 </p>
 
 <p align="center">
-  <img src="img/20200408172058_states.png" width="800"><br />
-  Global Covid19 Trend in different state of Malaysia (updated 8 April 2020)
+  <img src="img/20200409103819_states.png" width="800"><br />
+  Global Covid19 Trend in different state of Malaysia (updated 9 April 2020,11:02AM), red markers indicate the date from 13 March to 8 April 2020
 </p>
 
 ## Original idea
