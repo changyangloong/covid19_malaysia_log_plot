@@ -103,6 +103,8 @@ def scrap_outbreak():
     date = ''.join(date).split(',')
     date = [da.strip("'") for da in date]
     
+    
+    
     # Looking for state name and count
     i = 0
     stats = [find_state_count(ele_info,state_idx,ele_info) for state_idx in idx_state]
@@ -163,21 +165,30 @@ def generate_json(stat_dict,new_cases_daily,date,generate_curve):
 
     name = os.path.join(SAVEDIR,datetime.datetime.now().strftime('%Y%m%d%H%M%S') + '.json')    
     with open(name,'w') as fid:
-        json.dump(jsondata,fid,indent=5)    
+        json.dump(jsondata,fid,indent=5)   
+        
+    mco_idx = date.index('18/3')
+    mco_stat = [malaysia_stats_ori[0][mco_idx],malaysia_stats_ori[1][mco_idx]]
 
     if generate_curve:
         filename = os.path.join(SAVEDIR,datetime.datetime.now().strftime('%Y%m%d%H%M%S') + '_malaysia.png')
 
         plt.figure(figsize=(10,10)) 
         
-        plt.plot(malaysia_stats_ori[0][1:],malaysia_stats_ori[1][1:],label='raw data')     
+        plt.plot(malaysia_stats_ori[0][1:],malaysia_stats_ori[1][1:])     
 #        plt.plot(malaysia_stats[0][1:],malaysia_stats[1][1:],label='smoothen data') 
         
         plt.plot(malaysia_stats_ori[0][1:],malaysia_stats_ori[1][1:],'ro')
+        plt.plot(mco_stat[0],mco_stat[1],'b*',label='MCO (18/3)',markersize=18)
+#        plt.annotate('MCO(18/3)',
+#                     (mco_stat[0],mco_stat[1]),
+#                     textcoords="offset points",
+#                     xytext=(0,10),
+#                     ha='center')
         plt.yscale('log')
         plt.xscale('log')  
         plt.title('Malaysia Covid19 Trend')
-#        plt.legend(loc="upper left")
+        plt.legend(loc="upper left")
         plt.xlabel('Overall cases')
         plt.ylabel('New cases (weekly)')
         plt.tight_layout()    
@@ -190,14 +201,17 @@ def generate_json(stat_dict,new_cases_daily,date,generate_curve):
         for ori_stat,name,stat,i in zip(processed_stats_ori,state_names,processed_stats,np.arange(len(state_names))):
             plt.subplot(4,4,i+1)
             
-            plt.plot(ori_stat[0][1:],ori_stat[1][1:],label='raw data')     
+            mco_stat = [ori_stat[0][mco_idx],ori_stat[1][mco_idx]]
+            
+            plt.plot(ori_stat[0][1:],ori_stat[1][1:])     
 #            plt.plot(stat[0][1:],stat[1][1:],label='smoothen data') 
         
             plt.plot(ori_stat[0][1:],ori_stat[1][1:],'ro')
+            plt.plot(mco_stat[0],mco_stat[1],'b*',label='MCO (18/3)',markersize=18)
             plt.yscale('log')
             plt.xscale('log')  
             plt.title(name)
-#            plt.legend(loc="upper left")
+            plt.legend(loc="upper left")
             plt.xlabel('Overall cases')
             plt.ylabel('New cases (weekly)')
         plt.tight_layout()    
