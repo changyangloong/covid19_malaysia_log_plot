@@ -3,17 +3,17 @@ Inspired by aatishb and minutephysics, this project aims to monitor the Covid19 
 
 Different from traditional cases versus time/date graph, these graphs gives the weekly new cases versus overall cases in log scales. The  trend of the outbreak would be in straight line instead of exponential curves. By monitoring these charts, we would be able to tell if the situation of the outbreak had been combat effectively (details to state). Based on the trend, we could pin point which state are coping well with the pandemic and which are not to further analysis better and efficient way in resolving the pandemic.
 
-## Covid 19 treads of Malaysia
+## Covid 19 trends of Malaysia
 <p align="center">
-  <img src="covid_data/20200409172132_malaysia.png" width="600"><br />
-  Global Covid19 Trend in Malaysia (updated 9 April 2020, 5:23 PM), 
-  red markers indicate the date from 13 March to 9 April 2020
+  <img src="covid_data/20200411110248_malaysia.png" width="600"><br />
+  Global Covid19 Trend in Malaysia (updated 11 April 2020, 11:03 PM), 
+  red markers indicate the date from 13 March to 10 April 2020
 </p>
 
 <p align="center">
-  <img src="covid_data/20200409172133_states.png" width="800"><br />
-  Global Covid19 Trend in different state of Malaysia (updated 9 April 2020, 5:23 PM), 
-  red markers indicate the date from 13 March to 9 April 2020
+  <img src="covid_data/20200411110249_states.png" width="800"><br />
+  Global Covid19 Trend in different state of Malaysia (updated 11 April 2020, 11:03 PM), 
+  red markers indicate the date from 13 March to 10 April 2020
 </p>
 
 ## Original idea
