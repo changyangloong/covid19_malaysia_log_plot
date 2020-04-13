@@ -31,7 +31,14 @@ def find_text_enclosed(source,lower_target,upper_target,start_idx):
 def find_state_count(source,state_idx,ele_info):    
     state = find_text_enclosed(ele_info,'text: ',',',state_idx).strip("'")
     data = find_text_enclosed(ele_info,'data: [','],',state_idx).split(',')
-    data = [int(x) for x in data]
+    def convert_int(x):
+        if x.isnumeric():
+            return int(x)
+        else:
+            # special case for 13 April 2020 where string content '154&#039;'
+            return int(x[0:3])
+        
+    data = [convert_int(x) for x in data]
     
     return (state,data)
 
