@@ -42,3 +42,7 @@ Run generate_outbreak_json.py to create the json file as well as the graphs
 Special thanks to https://www.outbreak.my/ for data source.  
 Special thanks to https://aatishb.com/covidtrends/, and https://github.com/aatishb/covidtrends for the algorithm  
 Special thanks to minutephysics's comprehensive interpretation of the curve shown in https://www.youtube.com/watch?v=54XLXg4fYsc
+
+# Supported by
+Neuon AI Sdn Bhd.
+www.neuon.ai
