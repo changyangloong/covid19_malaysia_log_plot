@@ -16,8 +16,9 @@ from bs4 import BeautifulSoup
 import json
 from scipy.interpolate import UnivariateSpline
 import matplotlib.pyplot as plt
+from PIL import Image
 
-
+im = r'img/watermark.png'
 URL = 'https://www.outbreak.my/states'
 SAVEDIR = 'covid_data'
 
@@ -200,7 +201,12 @@ def generate_json(stat_dict,new_cases_daily,date,generate_curve):
         plt.ylabel('New cases (weekly)')
         plt.tight_layout()    
         print(filename)
-        plt.savefig(filename)   
+        plt.savefig(filename,transparent=True)  
+        chart = Image.open(filename).convert('RGBA')
+        watermark = Image.open(im).convert('RGBA').resize(chart.size)
+        
+        watermark.paste(chart,(0,0),chart)
+        watermark.save(filename)
         plt.close()
         
         filename = os.path.join(SAVEDIR,datetime.datetime.now().strftime('%Y%m%d%H%M%S') + '_states.png')
@@ -223,7 +229,12 @@ def generate_json(stat_dict,new_cases_daily,date,generate_curve):
             plt.ylabel('New cases (weekly)')
         plt.tight_layout()    
         print(filename)
-        plt.savefig(filename)
+        plt.savefig(filename,transparent=True)
+        chart = Image.open(filename).convert('RGBA')
+        watermark = Image.open(im).convert('RGBA').resize(chart.size)
+        
+        watermark.paste(chart,(0,0),chart)
+        watermark.save(filename)
         plt.close()
 
 
