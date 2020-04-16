@@ -80,7 +80,7 @@ def process_stat(stats_total,stats_daily):
     
     return (xnew,weekly_smooth)
 
-def scrap_outbreak():
+def scrap_outbreak(saverecord=True):
     if not os.path.exists(SAVEDIR):
         os.makedirs(SAVEDIR)
     
@@ -125,12 +125,13 @@ def scrap_outbreak():
         new_cases_daily[stat[0]] = [x for x in np.asarray(stat[1],dtype=np.int32)[1:] - np.asarray(stat[1],dtype=np.int32)[0:-1]]
     
     
-    # Save result to local file (save keep purpose)
-    name = os.path.join(SAVEDIR,datetime.datetime.now().strftime('%Y%m%d%H%M%S') + '.neuon')
-    with open(name,'wb') as fid:
-        cPickle.dump(stat_dict,fid,protocol=cPickle.HIGHEST_PROTOCOL)
-        cPickle.dump(new_cases_daily,fid,protocol=cPickle.HIGHEST_PROTOCOL)
-        cPickle.dump(date,fid,protocol=cPickle.HIGHEST_PROTOCOL)
+    if saverecord:
+        # Save result to local file (save keep purpose)
+        name = os.path.join(SAVEDIR,datetime.datetime.now().strftime('%Y%m%d%H%M%S') + '.neuon')
+        with open(name,'wb') as fid:
+            cPickle.dump(stat_dict,fid,protocol=cPickle.HIGHEST_PROTOCOL)
+            cPickle.dump(new_cases_daily,fid,protocol=cPickle.HIGHEST_PROTOCOL)
+            cPickle.dump(date,fid,protocol=cPickle.HIGHEST_PROTOCOL)
         
     return (stat_dict,new_cases_daily,date)
 
