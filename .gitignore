@@ -2,3 +2,5 @@
 schedule.py
 __pycache__/get_outbreak_json.cpython-36.pyc
 readme.txt
+covid_update.bat
+covid_update_force.bat
