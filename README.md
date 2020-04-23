@@ -11,7 +11,7 @@ Different from traditional cases versus time/date graph, these graphs gives the 
 </p>
 
 <p align="center">
-  <img src="covid_data/20200423000005_states.png" width="800"><br />
+  <img src="covid_data/20200423180005_states.png" width="800"><br />
   Global Covid19 Trend in different state of Malaysia (updated 23 April 2020, 06:00 PM), 
   red markers indicate the date from 13 March to 23 April 2020
 </p>
